@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT/OT Secure Telemetry | Sebastián Arriaga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            accent: '#3b82f6',
+                            safe: '#22c55e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-industrial-900 text-slate-300 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-industrial-900/90 backdrop-blur-sm border-b border-industrial-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl text-white tracking-wider">
+                    SEBASTIAN ARRIAGA<span class="text-industrial-accent">_</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-slate-400 hover:text-white flex items-center transition-colors text-sm font-medium">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-12 bg-industrial-800 border-b border-industrial-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center">
+                <svg class="w-8 h-8 mr-3 text-industrial-safe" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+                IT/OT Secure Telemetry Architecture
+            </h1>
+            <p class="mt-4 text-lg text-slate-400 max-w-3xl">
+                Zero Trust network architectures, subnet isolation, and cross-border remote commissioning using Tailscale WireGuard mesh VPNs.
+            </p>
+        </div>
+    </header>
+
+    <!-- Content Placeholder -->
+    <main class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-industrial-800 border border-industrial-700 rounded-xl p-8 text-center">
+            <div class="w-20 h-20 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-industrial-safe" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-4">Content Coming Soon</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+                This section will showcase network architecture diagrams, VPN configurations, and security implementations for IT/OT convergence in industrial environments.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-900 border-t border-industrial-700 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>&copy; 2026 Sebastián Arriaga. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-industrial-accent transition-colors">LinkedIn Profile</a>
+                <a href="#" class="hover:text-industrial-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

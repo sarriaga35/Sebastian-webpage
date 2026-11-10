@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC Projects | Sebastián Arriaga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            accent: '#3b82f6',
+                            safe: '#22c55e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-industrial-900 text-slate-300 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-industrial-900/90 backdrop-blur-sm border-b border-industrial-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl text-white tracking-wider">
+                    SEBASTIAN ARRIAGA<span class="text-industrial-accent">_</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-slate-400 hover:text-white flex items-center transition-colors text-sm font-medium">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-12 bg-industrial-800 border-b border-industrial-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center">
+                <svg class="w-8 h-8 mr-3 text-industrial-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                PLC Programming Use Cases
+            </h1>
+            <p class="mt-4 text-lg text-slate-400 max-w-3xl">
+                Demonstrating applied logic design, fail-safe architecture, and hardware integration using industry-standard controllers and simulation environments.
+            </p>
+        </div>
+    </header>
+
+    <!-- Project 1: Silo Batching System -->
+    <main class="py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article class="bg-industrial-800 border border-industrial-700 rounded-xl overflow-hidden shadow-2xl">
+            
+            <!-- Project Header -->
+            <div class="p-8 border-b border-industrial-700">
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-industrial-900 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-xs font-semibold">Allen-Bradley CompactLogix</span>
+                    <span class="bg-industrial-900 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-xs font-semibold">Studio 5000 (LD)</span>
+                    <span class="bg-industrial-900 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-xs font-semibold">Remote Commissioning</span>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-4">Automated Silo Batching System</h2>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    Design, programming, and remote commissioning of an automated material dosing sequence. This project validates logic using a physical <strong>CompactLogix 5370</strong> controller located in Houston, TX, accessed securely via a Tailscale mesh VPN from Edmonton, AB. Physical process simulation was achieved using LogixPro.
+                </p>
+            </div>
+
+            <!-- Project Details Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 border-b border-industrial-700 bg-industrial-900/50">
+                
+                <!-- Left Col: I/O & Architecture -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4 border-b border-industrial-700 pb-2">I/O Mapping & Variables</h3>
+                    <div class="overflow-x-auto rounded-lg border border-industrial-700 mb-6">
+                        <table class="w-full text-sm text-left text-slate-400">
+                            <thead class="text-xs text-slate-300 uppercase bg-industrial-800">
+                                <tr>
+                                    <th class="px-4 py-3">Tag Name</th>
+                                    <th class="px-4 py-3">Type</th>
+                                    <th class="px-4 py-3">Function</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-industrial-700">
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-industrial-accent">Prox_Sensor_Silo</td>
+                                    <td class="px-4 py-3">DI (BOOL)</td>
+                                    <td class="px-4 py-3">Detects exact container positioning under the discharge valve.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-industrial-accent">Level_Sensor_High</td>
+                                    <td class="px-4 py-3">DI (BOOL)</td>
+                                    <td class="px-4 py-3">Indicates container has reached maximum volumetric capacity.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-industrial-accent">Valve_Solenoid</td>
+                                    <td class="px-4 py-3">DO (BOOL)</td>
+                                    <td class="px-4 py-3">Actuates the opening/closing of the silo discharge gate.</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-mono text-industrial-accent">Motor_Conveyor</td>
+                                    <td class="px-4 py-3">DO (BOOL)</td>
+                                    <td class="px-4 py-3">Controls the advancement of the container transport belt.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-4 border-b border-industrial-700 pb-2">Fail-Safe Engineering</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-400 text-sm">
+                        <li><strong>Interlocking:</strong> Strict conditional logic prevents the conveyor motor from starting while the discharge valve is open, avoiding material spills.</li>
+                        <li><strong>Guarding:</strong> Immediate discharge halt upon loss of the proximity sensor signal.</li>
+                        <li><strong>Scalability:</strong> Industry-standard tag naming conventions to facilitate future SCADA integration (Ignition) or multi-silo expansion.</li>
+                    </ul>
+                </div>
+
+                <!-- Right Col: Media Placeholders -->
+                <div class="space-y-6">
+                    <!-- Hardware Photo Placeholder -->
+                    <div class="bg-industrial-800 border border-industrial-700 rounded-lg p-2 aspect-video flex flex-col items-center justify-center relative overflow-hidden group">
+                        <div class="text-slate-500 flex flex-col items-center z-10">
+                            <svg class="w-10 h-10 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            <span class="text-sm">Insert Image: Physical CompactLogix 5370 in Houston</span>
+                        </div>
+                    </div>
+
+                    <!-- Code / Ladder Snippet Placeholder -->
+                    <div class="bg-industrial-800 border border-industrial-700 rounded-lg p-2 aspect-video flex flex-col items-center justify-center relative overflow-hidden group">
+                        <div class="text-slate-500 flex flex-col items-center z-10">
+                            <svg class="w-10 h-10 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <span class="text-sm">Insert GIF/Video: Studio 5000 Ladder Execution</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive HMI Simulator -->
+            <div class="p-8">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-white">Interactive HMI Validation</h3>
+                    <p class="text-sm text-slate-400 mt-1">
+                        Interact with the simulator below to test the fail-safe logic constraints. Notice how the valve interlock prevents material discharge unless the container is detected and the motor is stopped.
+                    </p>
+                </div>
+                
+                <!-- HMI Simulator Code (Integrated) -->
+                <div class="max-w-3xl mx-auto bg-industrial-900 p-6 rounded-lg border border-industrial-700 font-mono shadow-inner">
+                    <div class="flex justify-between items-center mb-6 border-b border-industrial-700 pb-2">
+                        <h3 class="text-lg text-slate-200 font-bold">HMI Panel: Silo Control</h3>
+                        <span class="text-xs text-industrial-safe animate-pulse">● Simulated CIP Link</span>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 text-center text-xs text-slate-400 mb-8">
+                        <div class="flex flex-col items-center">
+                            <div id="led-run" class="w-8 h-8 rounded-full bg-red-600 border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300"></div>
+                            <p>Sys_Run</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div id="led-prox" class="w-8 h-8 rounded-full bg-slate-600 border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300"></div>
+                            <p>Prox_Sensor</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div id="led-valve" class="w-8 h-8 rounded-full bg-slate-600 border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300"></div>
+                            <p>Valve_Cmd</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div id="led-motor" class="w-8 h-8 rounded-full bg-slate-600 border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300"></div>
+                            <p>Motor_Cmd</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Process Animation -->
+                        <div class="bg-black rounded border border-industrial-700 p-4 relative h-48 flex flex-col items-center justify-end overflow-hidden">
+                            <div class="absolute top-0 w-12 h-10 bg-slate-500 rounded-b-md border-b-4 border-slate-600 z-20"></div>
+                            <div id="material-flow" class="absolute top-10 w-4 bg-yellow-500 h-0 transition-all duration-200 z-10"></div>
+                            <div id="container" class="w-20 h-16 border-x-4 border-b-4 border-industrial-accent bg-industrial-800 flex items-end justify-center transform -translate-x-32 transition-transform duration-1000 ease-linear z-30">
+                                <div id="fill-level" class="w-full bg-yellow-500 h-0 transition-all duration-300"></div>
+                            </div>
+                            <div class="w-full h-4 bg-slate-700 mt-1 rounded border-t-2 border-slate-600 flex items-center justify-around z-0">
+                                <div class="w-2 h-2 rounded-full bg-industrial-900"></div>
+                                <div class="w-2 h-2 rounded-full bg-industrial-900"></div>
+                                <div class="w-2 h-2 rounded-full bg-industrial-900"></div>
+                                <div class="w-2 h-2 rounded-full bg-industrial-900"></div>
+                            </div>
+                        </div>
+
+                        <!-- Operator Controls -->
+                        <div class="bg-industrial-800 p-4 rounded border border-industrial-700 flex flex-col justify-center space-y-4">
+                            <button id="btn-toggle-sys" class="bg-red-700 hover:bg-red-600 text-white font-bold py-3 px-4 rounded border-b-4 border-red-900 active:border-b-0 active:translate-y-1 transition-all">
+                                START / STOP SYSTEM
+                            </button>
+                            <div class="text-xs text-slate-400 text-center mt-4 mb-1">Hardware Sensor Simulation</div>
+                            <button id="btn-prox-sim" class="bg-slate-600 hover:bg-slate-500 text-slate-200 font-bold py-2 px-4 rounded border-b-4 border-slate-800 active:border-b-0 active:translate-y-1 transition-all disabled:opacity-50" disabled>
+                                Force Prox Sensor (Container Arrived)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- HMI Script -->
+                <script>
+                    let sysRun = false; let proxSensor = false; let valveOpen = false; let motorRun = false; let containerLevel = 0; let fillInterval = null;
+                    const ledRun = document.getElementById('led-run'); const ledProx = document.getElementById('led-prox'); const ledValve = document.getElementById('led-valve'); const ledMotor = document.getElementById('led-motor');
+                    const btnToggleSys = document.getElementById('btn-toggle-sys'); const btnProxSim = document.getElementById('btn-prox-sim');
+                    const container = document.getElementById('container'); const fillLevelUI = document.getElementById('fill-level'); const materialFlow = document.getElementById('material-flow');
+
+                    function updateLogic() {
+                        if (sysRun && !proxSensor) {
+                            motorRun = true;
+                            container.style.transform = 'translate-x-0';
+                            setTimeout(() => { if(sysRun && motorRun) btnProxSim.disabled = false; }, 1000);
+                        } else { motorRun = false; }
+
+                        if (sysRun && proxSensor && !motorRun && containerLevel < 100) {
+                            valveOpen = true;
+                            materialFlow.style.height = '64px';
+                            if (!fillInterval) {
+                                fillInterval = setInterval(() => {
+                                    containerLevel += 10;
+                                    fillLevelUI.style.height = `${containerLevel}%`;
+                                    if (containerLevel >= 100) {
+                                        valveOpen = false; materialFlow.style.height = '0px';
+                                        clearInterval(fillInterval); fillInterval = null;
+                                        setTimeout(() => {
+                                            proxSensor = false; container.style.transform = 'translate-x-32'; updateLogic();
+                                            setTimeout(() => { containerLevel = 0; fillLevelUI.style.height = '0%'; container.style.transform = 'translate-x(-32px)'; if(sysRun) updateLogic(); }, 1000);
+                                        }, 500);
+                                    }
+                                }, 300);
+                            }
+                        } else {
+                            valveOpen = false; materialFlow.style.height = '0px';
+                            if (fillInterval) { clearInterval(fillInterval); fillInterval = null; }
+                        }
+                        updateUI();
+                    }
+
+                    function updateUI() {
+                        ledRun.className = `w-8 h-8 rounded-full border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300 ${sysRun ? 'bg-green-500 shadow-[0_0_15px_#22c55e]' : 'bg-red-600'}`;
+                        btnToggleSys.className = `font-bold py-3 px-4 rounded border-b-4 active:border-b-0 active:translate-y-1 transition-all ${sysRun ? 'bg-green-700 hover:bg-green-600 text-white border-green-900' : 'bg-red-700 hover:bg-red-600 text-white border-red-900'}`;
+                        ledProx.className = `w-8 h-8 rounded-full border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300 ${proxSensor ? 'bg-yellow-400 shadow-[0_0_15px_#facc15]' : 'bg-slate-600'}`;
+                        ledValve.className = `w-8 h-8 rounded-full border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300 ${valveOpen ? 'bg-blue-500 shadow-[0_0_15px_#3b82f6]' : 'bg-slate-600'}`;
+                        ledMotor.className = `w-8 h-8 rounded-full border-2 border-industrial-900 shadow-inner mb-2 transition-colors duration-300 ${motorRun ? 'bg-green-400 shadow-[0_0_15px_#4ade80]' : 'bg-slate-600'}`;
+                    }
+
+                    btnToggleSys.addEventListener('click', () => {
+                        sysRun = !sysRun;
+                        if (!sysRun) { btnProxSim.disabled = true; proxSensor = false; }
+                        updateLogic();
+                    });
+
+                    btnProxSim.addEventListener('click', () => {
+                        proxSensor = true; btnProxSim.disabled = true; updateLogic();
+                    });
+                </script>
+                <!-- End HMI Script -->
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-900 border-t border-industrial-700 py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>&copy; 2026 Sebastián Arriaga. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-industrial-accent transition-colors">LinkedIn Profile</a>
+                <a href="#" class="hover:text-industrial-accent transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

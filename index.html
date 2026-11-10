@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastián Arriaga | Automation & Control Systems Engineer</title>
+    <!-- Tailwind CSS CDN for instant preview in Windsurf -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            900: '#0f172a', // Slate 900
+                            800: '#1e293b', // Slate 800
+                            700: '#334155', // Slate 700
+                            accent: '#3b82f6', // Blue 500
+                            safe: '#22c55e', // Green 500
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-industrial-900 text-slate-300 font-sans antialiased selection:bg-industrial-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-industrial-900/90 backdrop-blur-sm border-b border-industrial-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl text-white tracking-wider">
+                    SEBASTIAN ARRIAGA<span class="text-industrial-accent">_</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#expertise" class="hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Expertise</a>
+                        <a href="mailto:your.email@example.com" class="bg-industrial-accent hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="lg:w-2/3">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                Electrical Engineer <br>
+                <span class="text-industrial-accent text-3xl sm:text-4xl">Industrial Automation & Control Systems</span>
+            </h1>
+            <p class="mt-6 text-lg text-slate-400 leading-relaxed mb-8">
+                Electrical Engineer with over 15 years of experience in instrumentation and automation for the oil, gas, and refining sectors. Specialized in the full lifecycle of process control: from field instrumentation and PLC programming (Allen-Bradley, Siemens) to DCS integration and SCADA platforms like Ignition. Expert in IT/OT convergence, designing fail-safe control logic, and deploying high-security telemetry infrastructure using mesh VPN networks for secure, unattended remote access.
+            </p>
+            
+            <!-- Skill Badges -->
+            <div class="flex flex-wrap gap-2 mb-10">
+                <span class="bg-industrial-800 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-sm">Studio 5000</span>
+                <span class="bg-industrial-800 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-sm">Ignition SCADA</span>
+                <span class="bg-industrial-800 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-sm">Modbus TCP / CIP</span>
+                <span class="bg-industrial-800 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-sm">Tailscale VPN</span>
+                <span class="bg-industrial-800 border border-industrial-700 text-blue-300 px-3 py-1 rounded-full text-sm">Fail-safe Logic</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Routing Section -->
+    <section id="expertise" class="py-16 bg-industrial-800 border-t border-industrial-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-10">Engineering Portfolio & Use Cases</h2>
+            
+            <!-- Grid Layout for Subpages -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- PLC Projects Card -->
+                <a href="plc-projects.html" class="group block bg-industrial-900 border border-industrial-700 rounded-lg p-6 hover:border-industrial-accent transition-all hover:-translate-y-1 shadow-lg">
+                    <div class="w-12 h-12 bg-blue-900/50 rounded-lg flex items-center justify-center mb-4 text-industrial-accent group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-industrial-accent transition-colors">PLC Programming</h3>
+                    <p class="text-sm text-slate-400">Ladder Logic (LD) and Structured Text (ST) for Allen-Bradley CompactLogix, Click PLUS, and Siemens. Includes simulated Silo batching control.</p>
+                    <div class="mt-4 text-industrial-accent text-sm font-semibold flex items-center">
+                        View Use Cases <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- SCADA & HMI Card -->
+                <a href="scada.html" class="group block bg-industrial-900 border border-industrial-700 rounded-lg p-6 hover:border-industrial-accent transition-all hover:-translate-y-1 shadow-lg">
+                    <div class="w-12 h-12 bg-purple-900/50 rounded-lg flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">SCADA & Node-RED</h3>
+                    <p class="text-sm text-slate-400">Custom HMIs, Ignition integration, and Node-RED dashboards for remote monitoring via native CIP and Modbus TCP protocols.</p>
+                    <div class="mt-4 text-purple-400 text-sm font-semibold flex items-center">
+                        View Use Cases <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- IT/OT Network Card -->
+                <a href="it-ot.html" class="group block bg-industrial-900 border border-industrial-700 rounded-lg p-6 hover:border-industrial-accent transition-all hover:-translate-y-1 shadow-lg">
+                    <div class="w-12 h-12 bg-green-900/50 rounded-lg flex items-center justify-center mb-4 text-industrial-safe group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-industrial-safe transition-colors">IT/OT Secure Telemetry</h3>
+                    <p class="text-sm text-slate-400">Zero Trust network architectures, subnet isolation, and cross-border remote commissioning using Tailscale WireGuard mesh VPNs.</p>
+                    <div class="mt-4 text-industrial-safe text-sm font-semibold flex items-center">
+                        View Architecture <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+                <!-- FAT / SAT Card -->
+                <a href="testing.html" class="group block bg-industrial-900 border border-industrial-700 rounded-lg p-6 hover:border-industrial-accent transition-all hover:-translate-y-1 shadow-lg">
+                    <div class="w-12 h-12 bg-amber-900/50 rounded-lg flex items-center justify-center mb-4 text-amber-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">FAT, SAT & Commissioning</h3>
+                    <p class="text-sm text-slate-400">Structured methodologies for Factory and Site Acceptance Testing. Simulation environments and I/O validation procedures.</p>
+                    <div class="mt-4 text-amber-400 text-sm font-semibold flex items-center">
+                        View Methodology <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-industrial-900 border-t border-industrial-700 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>&copy; 2026 Sebastián Arriaga. All rights reserved.</p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-industrial-accent transition-colors">LinkedIn Profile</a>
+                <a href="#" class="hover:text-industrial-accent transition-colors">Download Resume (PDF)</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
